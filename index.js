@@ -64,16 +64,17 @@ class Cart {
     }
 }
 
-const productCart = new Cart()
+const cart = new Cart()
 
-productCart.addProduct('White Cap',2)
-productCart.addProduct('Red Shoes',1)
-productCart.addProduct('Red Shoes',4)
-productCart.addProduct('Red Shoes',2)
-productCart.addProduct('Black Shirt',3)
+cart.addProduct("White Cap", 2);
 
-productCart.removeProduct('Black Shirt')
+cart.addProduct("Red Shoes", 1);
+cart.addProduct("Red Shoes", 4);
+cart.addProduct("Red Shoes", 2);
 
-productCart.removeProduct('Green Jacket')
+cart.addProduct("Black Shirt", 3);
+cart.removeProduct("Black Shirt");
 
-productCart.showCart()
+cart.removeProduct("Green Jacket");
+
+cart.showCart();
