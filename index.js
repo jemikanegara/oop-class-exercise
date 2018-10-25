@@ -4,20 +4,26 @@ class Cart {
     }
 
     addProduct(productCode, quantity){
+        
         this.products.push(
             {
                 productCode: productCode,
                 quantity: quantity
             }
         )
-
-
+    // Not Working
         // this.products.forEach(
         //     element => {
-        //         if(element.productCode !== productCode){
-        //             console.log(this)
-                    
-        //         } 
+        //         if(element.productCode === productCode){
+        //             element.quantity += quantity
+        //         } else {
+        //             this.products.push(
+        //                 {
+        //                     productCode: productCode,
+        //                     quantity: quantity
+        //                 }
+        //             )
+        //         }
         //     }
         // )
 
@@ -52,7 +58,7 @@ class Cart {
     showCart(){
         this.products.forEach(
             product => {
-                console.log(product)
+                console.log(`${product.productCode} (${product.quantity})`)
             }
         )
     }
