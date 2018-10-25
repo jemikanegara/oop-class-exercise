@@ -1,6 +1,6 @@
 class Cart {
     constructor(){
-        this.products = [{productCode: 'baju', quantity: 3}]
+        this.products = []
     }
 
     addProduct(productCode, quantity){
