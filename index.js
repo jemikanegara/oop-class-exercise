@@ -4,45 +4,25 @@ class Cart {
     }
 
     addProduct(productCode, quantity){
-        
-        this.products.push(
-            {
-                productCode: productCode,
-                quantity: quantity
+
+        let target = 0
+        let result = this.products.find(
+            (product, index) => {
+                target = index
+                return product.productCode === productCode
             }
         )
-    // Not Working
-        // this.products.forEach(
-        //     element => {
-        //         if(element.productCode === productCode){
-        //             element.quantity += quantity
-        //         } else {
-        //             this.products.push(
-        //                 {
-        //                     productCode: productCode,
-        //                     quantity: quantity
-        //                 }
-        //             )
-        //         }
-        //     }
-        // )
 
-       
-
-        // for(let i=0; i < this.products.length; i++){
-        //     if(this.products[i].productCode === productCode){
-        //         this.products[i].quantity += quantity
-        //     } else {
-        //         console.log('aa')
-        //         this.products.push(
-        //             {
-        //                 productCode: productCode,
-        //                 quantity: quantity
-        //             }
-        //         )
-        //     }
-        // }
-
+        if(result != undefined){
+            this.products[target].quantity += quantity
+        } else {
+            this.products.push(
+                {
+                    productCode: productCode,
+                    quantity: quantity
+                }
+            )
+        }
     }
 
     removeProduct(productCode){
